@@ -1,0 +1,148 @@
+/* ========== GOOGLE FONTS ========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ========== VARIABLES CSS ========== */
+
+:root {
+    /* ========== FONTS ========== */
+    --body-font: 'Roboto', sans-serif;
+
+    /* ========== WIDTHS AND HEIGHTS ========== */
+    --container-max-width-card: 800px;
+    --container-line-heading: 80px;
+    --container-form-icon: 35px;
+
+    /* ========== COLORS ========== */
+    --color-principal: 10, 192, 131;
+    --color-secondary: 255, 255, 255;
+
+    --shadow-card-container: 0 .3rem .8rem rgba(0, 0, 0, .12);
+    --shadow-btn-general: 0 0 10px rgba(0, 0, 0, 0.5);
+    --shadow-input-group: 0 5px 20px 0 rgb(61 82 96 / 15%);
+
+    /* ========== SIZE TEXT ========== */
+    --container-btn-home-size: 16px;
+    --container-form-input-size: 15px;
+    --container-form-btn-submit-size: 17px;
+}
+
+/* ========== CARD CONTAINER ========== */
+
+.container {
+    font-family: var(--body-font);
+}
+
+.card__container {
+    max-width: var(--container-max-width-card);
+    position: relative;
+    border: none;
+    box-shadow: var(--shadow-card-container);
+}
+
+.card__container .btn__home {
+    position: absolute;
+    top: 25px;
+    left: 45px;
+    z-index: 999;
+}
+
+.card__container .btn__home a {
+    color: rgb(var(--color-principal));
+    font-size: var(--container-btn-home-size);
+    padding: 10px;
+    border: none;
+    transition: all 0.3s ease 0s;
+    border-radius: 5px;
+    background-color: rgba(var(--color-principal), 0.1);
+}
+
+.card__container .btn__home a:hover {
+    box-shadow: var(--shadow-btn-general);
+}
+
+.card__container .card__content {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.card__container .card__content .card__heading {
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.card__container .card__content .card__heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    width: var(--container-line-heading);
+    border-top: 4px solid rgb(var(--color-principal));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__container .card__content .form-control,
+.card__container .card__content .form-select {
+    border: 0 !important;
+    padding-left: 0 !important;
+}
+
+.card__container .card__content .input-group {
+    box-shadow: var(--shadow-input-group);
+    border-radius: 5px;
+    margin-bottom: 2rem !important;
+}
+
+.card__container .card__content .input-group .input-group-text {
+    width: var(--container-form-icon);
+    height: var(--container-form-icon);
+    margin: 13px;
+    border: none !important;
+    border-radius: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--container-form-input-size) !important;
+    color: rgb(var(--color-principal));
+    background-color: rgba(var(--color-principal), 0.1);
+}
+
+.card__container .card__content .btn__submit {
+    border-radius: 5px !important;
+    font-size: var(--container-form-btn-submit-size);
+    border: none;
+    transition: all 0.3s ease 0s;
+    background-color: rgb(var(--color-principal));
+    color: rgb(var(--color-secondary));
+    padding: 16px 36px;
+}
+
+.card__container .card__content .btn__submit:hover {
+    box-shadow: var(--shadow-btn-general);
+    background-color: rgb(var(--color-principal));
+    color: rgb(var(--color-secondary));
+}
+
+/* ========== MEDIA QUERYS ========== */
+
+@media only screen and (max-width:414px) {
+    .card__container {
+        position: static;
+    }
+
+    .card__container .btn__home {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2rem !important;
+    }
+
+    .card__container .card__content {
+        padding-top: 2rem !important;
+    }
+}
